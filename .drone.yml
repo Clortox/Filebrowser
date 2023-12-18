@@ -1,0 +1,13 @@
+kind: pipeline
+type: docker
+name: build-and-release
+
+steps:
+  - name: build
+    image: alpine
+    commands:
+      - echo "Build your code!"
+  - name: release
+    image: alpine
+    commands:
+      - echo "Release your code!"

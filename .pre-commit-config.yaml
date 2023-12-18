@@ -1,0 +1,29 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-xml
+    -   id: check-json
+    -   id: check-toml
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: pretty-format-json
+        args:
+          - "--autofix"
+          - "--no-sort-keys"
+    -   id: check-symlinks
+    -   id: detect-private-key
+    -   id: sort-simple-yaml
+-   repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.4
+    hooks:
+    -   id: remove-crlf
+-   repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.27.2
+    hooks:
+    -   id: check-drone-ci
