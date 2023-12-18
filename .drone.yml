@@ -1,13 +1,24 @@
 kind: pipeline
 type: docker
-name: build-and-release
+name: build-container
 
 steps:
-  - name: build
-    image: alpine
-    commands:
-      - echo "Build your code!"
-  - name: release
-    image: alpine
-    commands:
-      - echo "Release your code!"
+- name: build-and-push
+  image: plugins/docker
+  settings:
+    repo: git.clortox.com/Infrastructure/filebrowser
+    registry: git.clortox.com
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags:
+      - latest
+      - ${DRONE_TAG}
+    when:
+      event:
+        - tag
+
+trigger:
+  event:
+    - tag
