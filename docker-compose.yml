@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  filebrowser:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      ADMIN_PASS: "my-secure-password"
+      DEFAULT_USERNAME: "user"
+      DEFAULT_PASSWORD: "password"
+      BRANDING_NAME: "My Awesome File Storage"
+      AUTH_METHOD: "json"
+      AUTH_HEADER: "X-My-Header"
+      PERM_ADMIN: "false"
+      PERM_EXECUTE: "false"
+      PERM_CREATE: "true"
+      PERM_RENAME: "false"
+      PERM_MODIFY: "false"
+      PERM_DELETE: "false"
+      PERM_SHARE: "false"
+      PERM_DOWNLOAD: "true"
