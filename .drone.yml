@@ -9,15 +9,30 @@ steps:
     repo: git.clortox.com/Infrastructure/filebrowser
     registry: git.clortox.com
     username:
-      from_secret: docker_username
+      from_secret: gitea_docker_username
     password:
-      from_secret: docker_password
+      from_secret: gitea_docker_password
     tags:
       - latest
       - ${DRONE_TAG}
     when:
       event:
         - tag
+- name: notify
+  image: clortox/drone-ntfy
+  settings:
+    URL: https://ntfy.clortox.com
+    USERNAME: drone
+    PASSWORD:
+      from_secret: ntfy_password
+    TOPIC: drone-builds
+    MESSAGE: Filebrowser ${DRONE_TAG} has compiled!
+    CLICK: https://drone.clortox.com/Infrastructure/filebrowser
+    TITLE: Filebrowser
+  when:
+    branch:
+      - tag
+
 
 trigger:
   event:
