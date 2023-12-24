@@ -79,10 +79,10 @@ containers:
     volumeMounts:
       - name: volume-name
         mountPath: /path/to/mount
-
-
-
 ```
+
+Note however that if you want to use a reverse proxy like [Authentik](https://goauthentik.io) for your authentication,
+you will need to update the [auth method](https://filebrowser.org/configuration/authentication-method#proxy-header)
 
 ## Mirrors
 
