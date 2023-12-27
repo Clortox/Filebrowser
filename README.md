@@ -1,6 +1,9 @@
 # Filebrowser
 
 ![Gitea Release](https://img.shields.io/gitea/v/release/Infrastructure/Filebrowser?gitea_url=https%3A%2F%2Fgit.clortox.com)
+![Static Badge](https://img.shields.io/badge/Gitea-g?style=flat-square&logo=gitea&logoColor=black&labelColor=grey&color=blue&link=https%3A%2F%2Fgit.clortox.com%2FInfrastructure%2FFilebrowser)
+![Static Badge](https://img.shields.io/badge/Github-g?style=flat-square&logo=github&logoColor=black&labelColor=grey&color=blue&link=https%3A%2F%2Fgithub.com%2FClortox%2FFilebrowser)
+
 
 An specfic contianer build of [filebrowser](https://filebrowser.org) that allows for some configuration using environment variables.
 Intended to be used as a sidecar for kubernetes pods.
@@ -85,8 +88,3 @@ containers:
 
 Note however that if you want to use a reverse proxy like [Authentik](https://goauthentik.io) for your authentication,
 you will need to update the [auth method](https://filebrowser.org/configuration/authentication-method#proxy-header)
-
-## Mirrors
-
-This repository is activly maintained on my [gitea](https://git.clortox.com/Infrastructure/Filebrowser).
-However you can find a [github mirror](https://github.com/Clortox/Filebrowser) as well.
