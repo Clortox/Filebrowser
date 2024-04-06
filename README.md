@@ -47,9 +47,8 @@ secrets in a [kubernetes secret](https://kubernetes.io/docs/concepts/configurati
 containers:
   - name: filebrowser
     image: git.clortox.com/infrastructure/filebrowser:latest
-    securityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
+    ports:
+    - containerPort: 80
     env:
       - name: ADMIN_PASS
         value: "admin"
@@ -81,7 +80,7 @@ containers:
         value: "false"
     volumeMounts:
       - name: volume-name
-        mountPath: /path/to/mount
+        mountPath: /srv
 ```
 
 Note however that if you want to use a reverse proxy like [Authentik](https://goauthentik.io) for your authentication,
