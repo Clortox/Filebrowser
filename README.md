@@ -1,7 +1,7 @@
 # Filebrowser
 
 ![Gitea Release](https://img.shields.io/gitea/v/release/Infrastructure/Filebrowser?gitea_url=https%3A%2F%2Fgit.clortox.com)
-[![Build Status](https://drone.clortox.com/api/badges/Infrastructure/Filebrowser/status.svg)](https://drone.clortox.com/Infrastructure/Filebrowser)
+![Build Status](https://git.clortox.com/Infrastructure/Filebrowser/actions/workflows/on-tag/badge.svg?branch=master)
 
 An specfic contianer build of [filebrowser](https://filebrowser.org) that allows for some configuration using environment variables.
 Intended to be used as a sidecar for kubernetes pods.
